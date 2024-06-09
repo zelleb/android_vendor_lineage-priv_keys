@@ -27,7 +27,7 @@ function generate_overrides_mk() {
 mkdir -p ${certs_path}
 
 # Platform keys
-subject="/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com"
+subject="/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=zelleb@esau.li"
 for cert in $(cat .data/platform_keys.txt); do
     key_platform="${certs_path}/${cert}.pem"
     cert_file="$(pwd)/${cert}.x509.pem"
@@ -44,7 +44,7 @@ done
 
 # APEX keys
 for apex in $(cat .data/apex_keys.txt); do
-    subject="/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=${apex}/emailAddress=android@android.com"
+    subject="/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=${apex}/emailAddress=zelleb@esau.li"
     key_apex="$(pwd)/${apex}.pem"
     cert_file="$(pwd)/${apex}.certificate.override.x509.pem"
     avbpubkey_file="$(pwd)/${apex}.avbpubkey"
